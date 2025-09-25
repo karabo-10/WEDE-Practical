@@ -1,0 +1,214 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #0d47a1; /* Royal Blue */
+  margin-bottom: 0.3rem;
+}
+
+header .tagline {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+  color: #1565c0;
+  border-bottom: 2px solid #1565c0;
+  padding-bottom: 2px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  background: url('your-image.jpg') no-repeat center/cover;
+  transform: translateY(-10%);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.hero:hover .hero-overlay {
+  transform: translateY(0); /* parallax effect */
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  background: rgba(13, 71, 161, 0.7);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+}
+
+.hero-content p {
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #0d47a1, #1565c0);
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #1565c0, #0d47a1);
+  transform: scale(1.07);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
+ul, table {
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+/* Forms */
+form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 600;
+}
+
+form input, form textarea, form button {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+form input, form textarea {
+  background: #fdfdfd;
+}
+
+/* Contact Form Button */
+form button {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2980B9, #6DD5FA); /* blue gradient */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #6DD5FA, #2980B9);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Footer */
+footer {
+  background: #0d47a1;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  margin-top: auto;
+}
+
+/* Logo & Images */
+img {
+  max-width: 250px;   /* limits image width */
+  height: auto;       /* keeps proportions */
+  display: block;
+  margin: 1rem auto;  /* centers images */
+  border-radius: 12px; /* smooth rounded edges for a premium look */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.hero img {
+  max-width: 100%;   /* hero images can be wider */
+  border-radius: 0;  /* hero images should stay clean */
+  box-shadow: none;
+}
