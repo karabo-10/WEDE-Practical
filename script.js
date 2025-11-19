@@ -195,19 +195,44 @@ function initSearch() {
   renderServices(servicesData);
 }
 
-/* ---------- LEAFLET MAP ---------- */
 function initMap() {
-  // if map div not present or L not loaded, skip
   const mapEl = $('#map');
   if (!mapEl || typeof L === 'undefined') return;
-  const coords = [-29.1211, 26.2140];
+
+  const coords = [-29.1211, 26.2140]; // lat, lng
+
   try {
     const map = L.map('map').setView(coords, 13);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
-    L.marker(coords).addTo(map).bindPopup('Bloemfontein Community Support (BCS)').openPopup();
+
+    const marker = L.marker(coords).addTo(map);
+
+    // Call reverse geocoding
+    const url = `https://nominatim.openstreetmap.org/reverse?lat=${coords[0]}&lon=${coords[1]}&format=json&addressdetails=1`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // data.display_name is the human readable address
+        const address = data.display_name;
+        marker.bindPopup(address);
+
+        // Optionally, open the popup right away
+        marker.openPopup();
+      })
+      .catch(err => {
+        console.warn('Reverse geocoding failed', err);
+        // fallback to just showing coords
+        marker.bindPopup(`${coords[0]}, ${coords[1]}`);
+      });
+
+    marker.on('click', function () {
+      window.open(`https://www.google.com/maps?q=${coords[0]},${coords[1]}`, "_blank");
+    });
+
   } catch (err) {
     console.warn('Leaflet initialization failed', err);
   }
