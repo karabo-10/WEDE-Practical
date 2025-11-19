@@ -1,4 +1,4 @@
-/* script.js - Robust full implementation for Part 3
+/* script.js - Robust full implementation for POE
    - preserves your contact form IDs exactly:
      #contactForm, #name, #email, #contactType, #message, #contact-success
    - tabs, accordion (animated), modal/lightbox, gallery keyboard support
