@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enquiry — BCS</title>
+  <meta name="description" content="Enquire about volunteering, sponsorship or services at BCS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Enquiry</h1>
+  <nav class="navbar"><a href="index.html">Home</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> <a href="enquiry.html">Enquiry</a></nav>
+</header>
+
+<main class="content">
+  <h2>Submit an Enquiry</h2>
+  <form id="enquiry-form" novalidate>
+    <label for="fullName">Full Name</label>
+    <input id="fullName" name="fullName" type="text" required minlength="3">
+    <small id="fullName-error" class="error" aria-live="polite"></small>
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="e.g. 0821234567" required>
+    <small id="phone-error" class="error" aria-live="polite"></small>
+
+    <label for="enquiryType">Enquiry Type</label>
+    <select id="enquiryType" name="enquiryType">
+      <option value="volunteer">Volunteer</option>
+      <option value="sponsor">Sponsor</option>
+      <option value="services">Services</option>
+    </select>
+
+    <label for="details">Details</label>
+    <textarea id="details" name="details" required minlength="5"></textarea>
+    <small id="details-error" class="error" aria-live="polite"></small>
+
+    <button type="submit">Submit Enquiry</button>
+    <p id="enquiry-success" class="success" aria-live="polite"></p>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 Bloemfontein Community Support (BCS). All rights reserved.</p>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

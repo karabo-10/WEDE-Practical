@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us - Bloemfontein Community Support</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — BCS</title>
+  <meta name="description" content="Contact Bloemfontein Community Support for donations, partnership or general enquiries.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> | 
-    <a href="about.html">About Us</a> | 
-    <a href="contact.html">Contact Us</a>
-  </nav><br>
-  <img src="images/abc.png" alt="Company logo">
-  <p>Address: 73 Aliwal Street, Westdene, Bloemfontein, South Africa</p>
-  <p>Email:info@bcs.org.za</p>
-  <p>Phone:+27 51 013 5198</p>
+<header>
+  <h1>Contact Us</h1>
+  <nav class="navbar"><a href="index.html">Home</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> <a href="enquiry.html">Enquiry</a></nav>
+</header>
 
-  <form>
-    <label for="name">Your Name:</label><br>
-    <input type="text" id="name" name="name"><br><br>
+<main class="content">
+  <img src="images/abc.png" alt="BCS logo">
+  <p><strong>Address:</strong> 73 Aliwal Street, Westdene, Bloemfontein, South Africa</p>
+  <p><strong>Email:</strong> info@bcs.org.za</p>
+  <p><strong>Phone:</strong> +27 51 013 5198</p>
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message"></textarea><br><br>
+  <h2>Send a Message</h2>
+  <form id="contactForm" novalidate>
+    <label for="name">Your Name</label>
+    <input id="name" name="name" type="text" required minlength="3" placeholder="Full name">
+    <small id="name-error" class="error" aria-live="polite"></small>
 
-    <button type="submit">Send</button>
+    <label for="email">Your Email</label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com">
+    <small id="email-error" class="error" aria-live="polite"></small>
+
+    <label for="contactType">Type of Message</label>
+    <select id="contactType" name="contactType">
+      <option value="general">General</option>
+      <option value="donation">Donation</option>
+      <option value="partnership">Partnership</option>
+    </select>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required minlength="10" placeholder="Write your message..."></textarea>
+    <small id="message-error" class="error" aria-live="polite"></small>
+
+    <button type="submit">Send Message</button>
+    <p id="contact-success" class="success" aria-live="polite"></p>
   </form>
-  <footer>
-    <P>&copy; 2025 BCS. All rights reserved.</P>
-  </footer>
+</main>
+
+<footer>
+  <p>&copy; 2025 Bloemfontein Community Support (BCS). All rights reserved.</p>
+</footer>
+<script src="script.js" defer></script>
 </body>
 </html>

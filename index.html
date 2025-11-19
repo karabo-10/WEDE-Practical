@@ -1,93 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-<link rel="stylesheet" href="style.css">
-   
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bloemfontein Community Support (BCS) — Home</title>
+  <meta name="description" content="BCS: empowering Bloemfontein communities through education support, food security initiatives and community development. Volunteer, donate or partner with us.">
+  <meta name="keywords" content="Bloemfontein, community support, NGO, volunteer, food security, education">
+  <link rel="canonical" href="https://yourdomain.example/index.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bloemfontein Community Support (BCS)">
+  <meta property="og:description" content="Join BCS to improve education, reduce hunger and build local skills in Bloemfontein.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.example/index.html">
+  <meta property="og:image" content="images/og-image.jpg">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS (for map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
 </head>
 <body>
-  <section class="hero">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Bloemfontein Community Support (BCS)</h1>
-      <p>Empowering underprivileged communities in Bloemfontein through education, food security, and community development.</p>
-      <a href="contact.html" class="btn-cta">Get Involved</a>
-    </div>
+
+<header>
+  <h1>Bloemfontein Community Support (BCS)</h1>
+  <p class="tagline">Empowering communities through education, food security & development.</p>
+  <nav aria-label="Main navigation" class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Intro">
+  <div class="hero-overlay" role="img" aria-label="Community working together"></div>
+  <div class="hero-content">
+    <h2>Join us in building a brighter Bloemfontein</h2>
+    <p>Volunteer, sponsor or access our community services — together we change lives.</p>
+    <a href="enquiry.html" class="btn" id="hero-enquire">Get Involved</a>
   </div>
 </section>
-  
- 
-  <nav>
-    <a href="index.html">Home</a> | 
-    <a href="about.html">About Us</a> | 
-    <a href="contact.html">Contact Us</a>
-  </nav><br>
-  <img src="images/ngo.webp" alt="Company logo">
-  <h2>Welcome</h2>
-  <p>
-    BCS is a community-driven NGO working in townships and rural areas around Bloemfontein.
-    Our aim is to fight poverty, reduce food insecurity, and improve education outcomes for children.
-  </p>
 
-  <h2>Background</h2>
-  <p>
-    The organisation was started by local volunteers who saw the struggles faced by families in the community.
-    Many households lacked access to proper schooling, regular meals, and opportunities for growth.
-    Over time, BCS developed programmes that directly address these needs through education support,
-    food security projects, and community development initiatives.
-  </p>
+<main class="content" id="main">
 
-  <h2>Our Programmes</h2>
-  <ul>
-    <li>Education Programmes: Tutoring, workshops, and school supplies for children aged 5–18.</li>
-    <li>Food Security Initiatives: Food distribution and community gardens to reduce hunger.</li>
-    <li>Community Development: Skills training and workshops to build local capacity.</li>
-  </ul>
+  <!-- Interactive tabs for Programmes (JS) -->
+  <section class="panel">
+    <h2>Our Programmes</h2>
+    <div class="tabs" role="tablist" aria-label="Programme tabs">
+      <button class="tab active" role="tab" aria-selected="true" data-target="education">Education</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="food">Food Security</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="development">Community Development</button>
+    </div>
 
-  <h2>Target Audience</h2>
-  <ul>
-    <li>Children (5–18 years) needing education support</li>
-    <li>Families struggling with food insecurity</li>
-    <li>Community members looking for skills development opportunities</li>
-  </ul>
+    <div class="tab-panels">
+      <div id="education" class="tab-panel active">
+        <p>We run tutoring, mentoring and school supplies drives for children aged 5–18.</p>
+      </div>
+      <div id="food" class="tab-panel">
+        <p>Food distribution and community gardens to improve food security.</p>
+      </div>
+      <div id="development" class="tab-panel">
+        <p>Skills training, workshops and local enterprise support for sustainable development.</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Estimated Budget</h2>
-  <table border="1" cellpadding="5" cellspacing="0">
-    <tr>
-      <th>Programme</th>
-      <th>Budget</th>
-    </tr>
-    <tr>
-      <td>Education Programmes</td>
-      <td>R150,000</td>
-    </tr>
-    <tr>
-      <td>Food Security Initiatives</td>
-      <td>R200,000</td>
-    </tr>
-    <tr>
-      <td>Community Development</td>
-      <td>R100,000</td>
-    </tr>
-    <tr>
-      <td>Operational Costs</td>
-      <td>R50,000</td>
-    </tr>
-    <tr>
-      <th>Total</th>
-      <th>R500,000</th>
-    </tr>
-  </table>
+  <!-- Search + dynamic content (services loaded by JS) -->
+  <section class="panel" aria-labelledby="services-title">
+    <h2 id="services-title">Services & Events <small>(search & filter)</small></h2>
 
-  <h2>Get Involved</h2>
-  <p>
-    Join us in making a difference! You can volunteer, sponsor a programme, or donate to support
-    underprivileged communities in Bloemfontein.
-  </p>
-  <footer>
-    <P>&copy; 2025 BCS. All rights reserved.</P>
-  </footer>
+    <div class="search-bar">
+      <input type="search" id="searchInput" placeholder="Search services, e.g., tutoring, garden, workshop" aria-label="Search services">
+      <select id="filterSelect" aria-label="Filter by category">
+        <option value="all">All categories</option>
+      </select>
+    </div>
+
+    <div id="servicesList" class="grid"></div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="panel">
+    <h2>Gallery</h2>
+    <div class="gallery" id="gallery">
+      <!-- images added by HTML or JS; clicking opens lightbox -->
+      <img src="images/gal1.webp" alt="Volunteers distributing food" tabindex="0" class="gallery-item">
+      <img src="images/gal2.webp" alt="Children reading at a class" tabindex="0" class="gallery-item">
+      <img src="images/gal3.webp" alt="Community garden" tabindex="0" class="gallery-item">
+    </div>
+  </section>
+
+  <!-- Accordion FAQ -->
+  <section class="panel">
+    <h2>FAQ</h2>
+    <div class="accordion">
+      <button class="accordion-btn">How do I volunteer?</button>
+      <div class="accordion-panel"><p>Complete the Enquiry form selecting "Volunteer" and we'll contact you.</p></div>
+
+      <button class="accordion-btn">Are the services free?</button>
+      <div class="accordion-panel"><p>Most services are free. Sponsorship and some training programmes may have costs.</p></div>
+
+      <button class="accordion-btn">How can I donate?</button>
+      <div class="accordion-panel"><p>Use the Contact page to request banking details or donate via our partner platforms.</p></div>
+    </div>
+  </section>
+
+  <!-- Interactive map (Leaflet) -->
+  <section class="panel">
+    <h2>Find Us</h2>
+    <div id="map" style="height: 320px" aria-label="Map showing BCS location"></div>
+  </section>
+
+</main>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <button class="modal-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" alt="">
+  <p id="lightbox-caption"></p>
+</div>
+
+<!-- simple modal for contact success/info -->
+<div id="infoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Information">
+  <div class="modal-inner">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div id="infoModalContent"></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Bloemfontein Community Support (BCS). All rights reserved.</p>
+</footer>
+
+<!-- Scripts: Leaflet + main script -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
+<script src="script.js" defer></script>
 </body>
 </html>
